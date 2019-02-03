@@ -85,7 +85,7 @@ input[type="text"] {
   width: 300px;
   height: 50px;
   font-size: 20px;
-  color: white;
+  color: teal;
   text-align: center;
   transition: width 0.4s ease-in-out;
   background-color: white;

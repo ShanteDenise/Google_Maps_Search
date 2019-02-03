@@ -31,6 +31,7 @@ class App extends Component {
       near: location,
       v: "20182507"
     };
+    
 
     axios
       .get(endPoint + new URLSearchParams(parameters))
@@ -46,6 +47,7 @@ class App extends Component {
       .catch(error => {
         console.log("ERROR!! " + error);
       });
+      
   };
 
   initMap = () => {
@@ -62,6 +64,7 @@ class App extends Component {
       var contentString = `${myVenue.venue.name}`;
       var contentAddress = `${myVenue.venue.location.address}`;
       var contentPhoto = `${myVenue.venue.photos[0]}`;
+      console.log(myVenue)
 
       //Create a Marker
     var marker = new window.google.maps.Marker({
@@ -89,6 +92,7 @@ class App extends Component {
       <main>
         <NavBar />
         <SearchBar getVenues={this.getVenues} />
+       
         {this.state.venues.length === 0 ? (
           <LeadPhoto/>
         ) : (
@@ -101,11 +105,11 @@ class App extends Component {
                     <div className="flexed">
                       <div>
                         <div className="name">{myVenue.venue.name} </div>
-                        {myVenue.venue.location.address}
-                        <br />
+                        {myVenue.venue.location.address} {' '}
+                        {myVenue.venue.location.city} {' '}
                         {myVenue.venue.location.state}  
-
-                    {myVenue.venue.location.state}
+                        <br />
+                        
                     <hr/>
 
 

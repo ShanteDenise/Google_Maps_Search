@@ -12,9 +12,8 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <Navbar class="red" brand="Going Places" left> 
+        <Navbar class="red" brand="Search Places" left> 
             <img style={imgStyle} src="https://pngimage.net/wp-content/uploads/2018/06/map-logo-png-9.png"/>
-
         </Navbar>
       </div>
     );
