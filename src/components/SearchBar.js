@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {Button, Input, Row } from 'react-materialize'
 
 const Search = {
-    height: 100,
-    margin: 1
+    height: 60,
+    margin: 1,
+    
 }
 const buttonStyle = {
     top: 20,
@@ -32,13 +33,13 @@ const buttonStyle = {
   render() {
     return (
       <div style={Search} className="searchbar_background">
-        <p className="title-container__subtitle">
+        {/* <p className="title-container__subtitle">
           Find the best places to eat, drink, shop, or visit in any city in the world.
-          </p>
+          </p> */}
           <form onSubmit={this.handleSubmit}>
           <Row>
     <Input type="text" 
-            placeholder="What would you like to do??" 
+            placeholder="What would you like to do?" 
             s={4} 
             name="query" 
             value={this.state.query}

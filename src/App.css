@@ -4,7 +4,7 @@
 }
 
 html {
-  height: 700px;
+  height: 600px;
 }
 
 .container {
@@ -75,6 +75,7 @@ ul {
 .searchbar_background {
   background-size: cover;
   background-attachment: fixed;
+  background-color: rgb(37, 37, 37);
 }
 
 form {
