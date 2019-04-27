@@ -13,7 +13,6 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar class="teal" brand="Search Places" left> 
-            {/* <img style={imgStyle} src="https://pngimage.net/wp-content/uploads/2018/06/map-logo-png-9.png"/> */}
         </Navbar>
       </div>
     );

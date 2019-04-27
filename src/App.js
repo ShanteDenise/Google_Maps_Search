@@ -5,10 +5,9 @@ import SearchBar from "./components/SearchBar";
 import NavBar from "./components/NavBar";
 import LeadPhoto from "./components/LeadPhoto";
 
-
-const API_KEY = `${process.env.REACT_APP_GOOGLE_MAP}`
-const CLIENT_ID = `${process.env.REACT_APP_CLIENT_ID}`
-const CLIENT_SECRET= `${process.env.REACT_APP_CLIENT_SECRET}`
+const API_KEY = `${process.env.REACT_APP_GOOGLE_MAP}`;
+const CLIENT_ID = `${process.env.REACT_APP_CLIENT_ID}`;
+const CLIENT_SECRET = `${process.env.REACT_APP_CLIENT_SECRET}`;
 
 class App extends Component {
   state = {
@@ -31,7 +30,6 @@ class App extends Component {
       near: location,
       v: "20182507"
     };
-    
 
     axios
       .get(endPoint + new URLSearchParams(parameters))
@@ -47,7 +45,6 @@ class App extends Component {
       .catch(error => {
         console.log("ERROR!! " + error);
       });
-      
   };
 
   initMap = () => {
@@ -64,10 +61,10 @@ class App extends Component {
       var contentString = `${myVenue.venue.name}`;
       var contentAddress = `${myVenue.venue.location.address}`;
       var contentPhoto = `${myVenue.venue.photos[0]}`;
-      console.log(myVenue)
+      console.log(myVenue);
 
       //Create a Marker
-    var marker = new window.google.maps.Marker({
+      var marker = new window.google.maps.Marker({
         position: {
           lat: myVenue.venue.location.lat,
           lng: myVenue.venue.location.lng,
@@ -92,27 +89,25 @@ class App extends Component {
       <main>
         <NavBar />
         <SearchBar getVenues={this.getVenues} />
-       
+
         {this.state.venues.length === 0 ? (
-          <LeadPhoto/>
+          <LeadPhoto />
         ) : (
           <div className="container img-fluid">
             <div id="map-address">
+            <div className="results-title-text-container"><h4 id="results-title-text">Search Results</h4></div>
               <ul>
-                {/* id, name, location, categories, photos, venuePage} */}
                 {this.state.venues.map((myVenue, index) => (
                   <li key={index} className="list-group-item">
                     <div className="flexed">
                       <div>
+                       
                         <div className="name">{myVenue.venue.name} </div>
-                        {myVenue.venue.location.address} {' '}
-                        {myVenue.venue.location.city} {' '}
-                        {myVenue.venue.location.state}  
+                        {myVenue.venue.location.address}{" "}
+                        {myVenue.venue.location.city}{" "}
+                        {myVenue.venue.location.state}
                         <br />
-                        
-                    <hr/>
-
-
+                        <hr />
                         <br />
                       </div>
                     </div>

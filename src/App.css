@@ -99,6 +99,18 @@ input[type="text"]:focus {
   background-attachment: white;
 }
 
+#results-title-text{
+  text-align: center;
+}
+.results-title-text-container{
+  height: 4.6em;
+  color: white;
+  border: solid red 2px;
+  position: fixed;
+  width: 31.5em;
+  background-color: red;
+}
+
 .lead_Photo {
   width: 100vw;
   height: 500px;
